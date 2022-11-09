@@ -1,0 +1,147 @@
+/**
+* Name: Argie G. Cabaral
+* Section: Altruism
+* Year: 4th Year
+*/
+
+import java.util.Scanner;
+
+public class Main{
+  public static Scanner sc = new Scanner(System.in);
+  public static String again;
+  public static int ch, quantity=1;
+  public static double total=0;
+  public static String[] item = new String[]{" "," "," "," "," "," "," "," "," "};
+
+ public static void menu(){
+ 
+  System.out.println("\t\t======================================= ");
+  System.out.println("\t\t    Foods:                   Price      ");
+  System.out.println("\t\t           1.Chicken        Php 30.00   ");
+  System.out.println("\t\t           2.Fork           Php 35.00   ");
+  System.out.println("\t\t           3.Sisig          Php 40.00   ");
+  System.out.println("\t\t    Snacks:                  Price      ");
+  System.out.println("\t\t           4.Potato Chips   Php 30.00   ");
+  System.out.println("\t\t           5.Corn  Chips    Php 30.00   ");
+  System.out.println("\t\t           6.Popcorn        Php 70.00   ");
+  System.out.println("\t\t    Beverages:               Price      ");
+  System.out.println("\t\t           7.Red Horse      Php 85.00   ");
+  System.out.println("\t\t           8.San Miguel     Php 100.00  ");
+  System.out.println("\t\t           9.Emperador      Php 130.00  ");
+  System.out.println("\t\t======================================= ");
+  System.out.print("\t\t      What Do You Want To Order?????\n");
+ }
+
+
+  public static void bill(){
+   System.out.println("\n   Official List of Orders and Total             ");
+   System.out.println("------------------------------------------------------------ ");
+   System.out.print(item[0]);
+   System.out.print("\t"+item[1]);
+   System.out.print("\t"+item[2]);
+   System.out.print("\t"+item[3]);
+   System.out.print("\t"+item[4]);
+   System.out.print("\t"+item[5]);
+   System.out.print("\t"+item[6]);
+   System.out.print("\t"+item[7]);
+   System.out.print("\t"+item[8]); 
+   System.out.println("\n------------------------------------------------------------");
+   System.out.print("The Total is:        Php "+total); 
+   System.out.println();
+   System.out.print("\n------Thank You For Ordering-------");
+  }
+
+  public static void order(){
+
+   while(true){
+
+    System.out.print("\nPlease Enter Your Order Here: ");
+    ch = sc.nextInt();
+      switch(ch){
+       case 1:
+             System.out.print("You ordered Chicken");
+             System.out.print("\nEnter Quntity: "); 
+             quantity = sc.nextInt();
+             total = total + (quantity*30.00);
+             item[0] =("\nChicken        "+quantity+"     Php 30.00"); 
+             
+             break;
+       case 2:
+             System.out.print("You ordered Fork");
+             System.out.print("\nEnter Quntity: "); 
+             quantity = sc.nextInt();
+             total = total + (quantity*35.00);
+             item[1] =("\nFork           "+quantity+"     Php 35.00");  
+             break;
+       case 3:
+             System.out.print("You ordered Sisig");
+             System.out.print("\nEnter Quntity: "); 
+             quantity = sc.nextInt();
+             total = total + (quantity*40.00);
+             item[2] =    ("\nSisig          "+quantity+"     Php 40.00"); 
+             break;
+       case 4:
+             System.out.print("You ordered Potato Chips");
+             System.out.print("\nEnter Quntity: "); 
+             quantity = sc.nextInt();
+             total = total + (quantity*30.00);
+             item[3] =  ("\nPotato         "+quantity+"     Php 30.00"); 
+             break; 
+       case 5:
+             System.out.print("You ordered Corn Chips");
+             System.out.print("\nEnter Quntity: "); 
+             quantity = sc.nextInt();
+             total = total + (quantity*30.00);
+             item[4] =("\nCorn Chips     "+quantity+"     Php 30.00"); 
+             break;
+       case 6:
+             System.out.print("You ordered Popcorn");
+             System.out.print("\nEnter Quntity: "); 
+             quantity = sc.nextInt();
+             total = total + (quantity*70.00);
+             item[5] =("\nPopcorn        "+quantity+"     Php 70.00"); 
+             break;
+       case 7:             
+             System.out.print("You ordered Red Horse");
+             System.out.print("\nEnter Quntity: "); 
+             quantity = sc.nextInt();
+             total = total + (quantity*85.00);
+             item[6] =("\nRed Horse      "+quantity+"     Php 85.00"); 
+             break; 
+       case 8:            
+             System.out.print("You ordered San Miguel");
+             System.out.print("\nEnter Quntity: "); 
+             quantity = sc.nextInt();
+             total = total + (quantity*100.00);
+             item[7] =("\nSan Miguel     "+quantity+"     Php 100.00"); 
+             break;
+       case 9:
+             System.out.print("You ordered Emperador");
+             System.out.print("\nEnter Quntity: "); 
+             quantity = sc.nextInt();
+             total = total + (quantity*130.00);
+             item[8] =("\nEmperador      "+quantity+"     Php 130.00"); 
+             break;
+       default:
+             System.out.print("y and n only");
+             break;
+         }
+           System.out.print("\nYou Want To Order Again?");
+           System.out.print("\nPress Y for Yes Press and  N for No: ");
+           again = sc.next();
+           if(again.equalsIgnoreCase("Y"))
+           {order();}
+           else if(again.equalsIgnoreCase("N"))
+           {bill();}
+           System.exit(1);
+           
+      }
+        
+  }
+ public static void main(String[]args){
+     menu();
+     order();
+     bill();
+    
+  }
+}
